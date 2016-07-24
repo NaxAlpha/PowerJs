@@ -21,6 +21,7 @@ Module Program
 	End Sub
 
 	Private Sub Initialize()
+		'This is Release Build
 		Console.ForegroundColor = ConsoleColor.Magenta
 		Console.WriteLine("============ PowerJs ============")
 		Console.ForegroundColor = ConsoleColor.Cyan
