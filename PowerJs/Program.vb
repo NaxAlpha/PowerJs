@@ -21,6 +21,11 @@ Module Program
 	End Sub
 
 	Private Sub Initialize()
+		Console.ForegroundColor = ConsoleColor.Magenta
+		Console.WriteLine("============ PowerJs ============")
+		Console.ForegroundColor = ConsoleColor.Cyan
+		Console.WriteLine(".Net Javascript Experiment Engine")
+		Console.ForegroundColor = ConsoleColor.White
 		Console.Write("Loading <Core>... ")
 		LoadType(GetType(Core))
 		Console.ForegroundColor = ConsoleColor.Green
@@ -36,6 +41,7 @@ Module Program
 	End Sub
 
 	Sub Main()
+		Console.Title = "PowerJs"
 		Initialize()
 		While True
 			Console.ForegroundColor = ConsoleColor.Yellow
