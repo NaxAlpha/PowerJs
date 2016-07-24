@@ -1,0 +1,3 @@
+﻿Module Core
+
+End Module
