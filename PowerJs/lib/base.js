@@ -1,16 +1,17 @@
-﻿// Print message
-function out(msg) {
-	System.Console.WriteLine(msg);
+﻿/// File: base.js
+//  Contains simplified API for handling language primitives
+
+// Execute function async
+function async(fx) {
+	System.Threading.Tasks.Task.Run(fx);
 }
 
-// Prompt Input
-function inp(msg) {
-	if(msg!=null)
-		System.Console.Write(msg);
-	return System.Console.ReadLine();
+// Exits current running application
+function exit() {
+	System.Windows.Forms.Application.Exit();
 }
 
-// Waits for key to press
-function wait() {
-
+// Sleeps for milliseconds
+function sleep(milliSeconds) {
+	System.Threading.Thread.Sleep(milliSeconds);
 }

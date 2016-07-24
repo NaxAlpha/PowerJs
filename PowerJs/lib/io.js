@@ -1,19 +1,20 @@
-﻿// Read File Text
-function fread(name) {
-	return System.IO.File.ReadAllText(name);
+﻿/// File: io.js
+//  Contains simplified APIs to handle standard input/output
+
+// Print message
+function out(msg) {
+	System.Console.WriteLine(msg);
 }
 
-// Read File Binary
-function freadb(name) {
-	return System.IO.File.ReadAllBytes(name);
+// Prompt Input
+function inp(msg) {
+	if (msg != null)
+		System.Console.Write(msg);
+	return System.Console.ReadLine();
 }
 
-// Write File Text
-function fwrite(name, txt) {
-	System.IO.File.WriteAllText(name, txt);
+// Waits for key to press
+function wait() {
+	System.Console.ReadKey(true);
 }
 
-// Write File Binary
-function fwriteb(name, data) {
-	System.IO.File.WriteAllBytes(name, data);
-}
