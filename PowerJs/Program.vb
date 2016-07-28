@@ -71,9 +71,14 @@ Module Program
 			Try
 				Console.ForegroundColor = ConsoleColor.Gray
 				Engine.Execute(ln)
+				Dim output = Engine.GetCompletionValue()
+				Console.ForegroundColor = ConsoleColor.DarkGray
+				Console.Write("<< ")
+				Console.ForegroundColor = ConsoleColor.DarkMagenta
+				Console.WriteLine(output.ToString())
 			Catch ex As Exception
 				Console.ForegroundColor = ConsoleColor.Blue
-				Console.Write("[Error: ")
+				Console.Write("[")
 				Console.ForegroundColor = ConsoleColor.Red
 				Console.Write(ex.ToString())
 				Console.ForegroundColor = ConsoleColor.Blue
