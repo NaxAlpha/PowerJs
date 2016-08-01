@@ -61,8 +61,7 @@ Module Program
 		Next
 	End Sub
 
-	Sub Main()
-		Initialize()
+	Private Sub Run()
 		While True
 			Console.ForegroundColor = ConsoleColor.Yellow
 			Console.Write(">> ")
@@ -85,6 +84,41 @@ Module Program
 				Console.WriteLine("]")
 			End Try
 		End While
+	End Sub
+
+	Sub Main(ParamArray args() As String)
+		Initialize()
+		If args.Length = 0 Then
+			Console.ForegroundColor = ConsoleColor.Black
+			Console.BackgroundColor = ConsoleColor.White
+			Console.Write("No Input File Supplied! Running Interactive Mode...")
+			Console.BackgroundColor = ConsoleColor.Black
+			Console.WriteLine()
+			Run()
+			Return
+		End If
+
+		For Each filePath In args
+			Try
+				Console.ForegroundColor = ConsoleColor.Black
+				Console.BackgroundColor = ConsoleColor.White
+				Console.Write("Executing Script: ")
+				Console.ForegroundColor = ConsoleColor.Blue
+				Console.Write(filePath)
+				Console.BackgroundColor = ConsoleColor.Black
+				Console.ForegroundColor = ConsoleColor.Gray
+				Console.WriteLine()
+				Dim fileData = File.ReadAllText(filePath)
+				Engine.Execute(fileData)
+			Catch ex As Exception
+				Console.ForegroundColor = ConsoleColor.Blue
+				Console.Write("[")
+				Console.ForegroundColor = ConsoleColor.Red
+				Console.Write(ex.ToString())
+				Console.ForegroundColor = ConsoleColor.Blue
+				Console.WriteLine("]")
+			End Try
+		Next
 	End Sub
 
 End Module

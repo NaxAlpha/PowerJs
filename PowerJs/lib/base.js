@@ -8,7 +8,7 @@ function async(fx) {
 
 // Exits current running application
 function exit() {
-	System.Windows.Forms.Application.Exit();
+	Close();
 }
 
 // Sleeps for milliseconds

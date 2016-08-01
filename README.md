@@ -11,3 +11,6 @@ Javascript Console Engine
 ## Screenshots
 
 ![screenshot](https://raw.githubusercontent.com/NaxAlpha/PowerJs/master/PowerJs/shot.PNG)
+
+![screenshot](https://raw.githubusercontent.com/NaxAlpha/PowerJs/master/PowerJs/prime.PNG)
+
